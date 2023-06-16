@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import chalk from 'chalk'
+import fs from 'fs'
 
 // Config
 /*
@@ -76,3 +77,27 @@ app.get('/:server', async (req, res) => {
 app.listen(config.ApiPort, () => {
   console.log(chalk.greenBright(`Api Started at port ${config.ApiPort}`))
 })
+
+function checkUpdate() {
+  fs.readFile('./package.json', 'utf-8', (err, res)=>{
+    if (err) {
+      console.error(chalk.red(err))
+    } else {
+      const packageValue = JSON.parse(res);
+      const githubPackageUrl = (packageValue.homepage).replace('#readme', '').replace('github.com', 'raw.githubusercontent.com') + '/main/package.json';
+      fetch(githubPackageUrl)
+        .then((rawRes) => { return rawRes.json() })
+        .then((res) => {
+          if (packageValue.version !== res.version) {
+            console.log(chalk.blue(`Update avabile for ${chalk.underline(chalk.blueBright(res.version))}`))
+            console.log(chalk.blue(`Check Update on : ${(res.homepage).replace('#readme', '')}`))
+          } else {
+            console.log(chalk.blue('Your SC is UpToDate!!'))
+          }
+        })
+        .catch(() => { console.log(chalk.red("Failed to check Updates")) })
+    }
+  })
+}
+
+checkUpdate()
