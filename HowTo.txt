@@ -6,4 +6,9 @@ Turn off the api using ctrl+c or ^ca
 
 Use the api using axios or fetch on html script or js
 
+example usage url http://localhost:2022/server-s314197
+http://localhost -> url of api
+:2022/ -> port on url
+server-s314197 id server on minecraft-mp.com, example https://minecraft-mp.com/server-s314197 the id is server-s314197
+
 Thankyou, Goldn7799(Github)

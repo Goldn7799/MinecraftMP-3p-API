@@ -12,7 +12,7 @@
 
 	<!-- Module Script -->
 	<script type="module">
-		fetch('http://localhost:2022/')
+		fetch('http://localhost:2022/server-s314197')
 		.then((rawRes) => { return rawRes.json() })
 		.then((res) => {
 			document.getElementById('serverName').innerText = res.Name;
