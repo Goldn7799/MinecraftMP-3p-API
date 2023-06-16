@@ -1,0 +1,32 @@
+{
+  "name": "minecraftmp-3p-api",
+  "version": "1.0.0",
+  "description": "A Minecraft MP 3 party API",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goldn7799/MinecraftMP-3p-API.git"
+  },
+  "keywords": [
+    "api",
+    "minecraftmp",
+    "3p-api"
+  ],
+  "author": "SGStudio",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Goldn7799/MinecraftMP-3p-API/issues"
+  },
+  "homepage": "https://github.com/Goldn7799/MinecraftMP-3p-API#readme"
+}
