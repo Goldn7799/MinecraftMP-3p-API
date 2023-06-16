@@ -1,0 +1,9 @@
+for first installation you need to run "npm install" or "yarn install".
+
+after this you can run server using "npm start" or quickly "node index.js"
+
+Turn off the api using ctrl+c or ^ca
+
+Use the api using axios or fetch on html script or js
+
+Thankyou, Goldn7799(Github)
