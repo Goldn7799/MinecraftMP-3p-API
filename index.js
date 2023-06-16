@@ -5,9 +5,7 @@ import fs from 'fs'
 
 // Config
 /*
-  URL : Url of minecraft-mp.com server
   ApiPort : Port Of API
-  RefreshRate : Time update in (MS)
   AllowedUrl : use * for all, use example http://localhost for localhost only
 */
 const config = {
@@ -15,9 +13,6 @@ const config = {
   ApiPort: 2022,
   AllowedUrl: '*'
 }
-
-// Global Variable
-let ServerProperties = {}
 
 function getData(server) {
   return new Promise((resolve) => {
@@ -79,7 +74,7 @@ app.listen(config.ApiPort, () => {
 })
 
 function checkUpdate() {
-  fs.readFile('./package.json', 'utf-8', (err, res)=>{
+  fs.readFile('./package.json', 'utf-8', (err, res) => {
     if (err) {
       console.error(chalk.red(err))
     } else {
@@ -93,6 +88,7 @@ function checkUpdate() {
             console.log(chalk.blue(`Check Update on : ${(res.homepage).replace('#readme', '')}`))
           } else {
             console.log(chalk.blue('Your SC is UpToDate!!'))
+            console.log(chalk.blue('--- Changelog ---\n~ Delete Sucks Function'))
           }
         })
         .catch(() => { console.log(chalk.red("Failed to check Updates")) })

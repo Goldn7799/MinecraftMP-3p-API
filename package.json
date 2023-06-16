@@ -1,6 +1,6 @@
 {
   "name": "minecraftmp-3p-api",
-  "version": "1.0.0",
+  "version": "1.0.52",
   "description": "A Minecraft MP 3 party API",
   "main": "index.js",
   "type": "module",
